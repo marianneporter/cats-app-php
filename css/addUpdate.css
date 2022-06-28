@@ -1,0 +1,22 @@
+.add-update {
+    max-width: 30rem;
+    margin: 0 auto;
+}
+
+.content {
+    width: 30rem;
+}
+
+.button-set {
+    display: flex;
+    justify-content: space-around;
+}
+
+.button-set * {
+    width: 10rem;
+}
+
+.form-control input {
+    display: block;
+}
+

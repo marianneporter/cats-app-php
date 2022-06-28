@@ -1,0 +1,23 @@
+.content {
+    width: 40rem;
+}
+
+.det-line {
+    line-height: 2;
+}
+
+.det-line:first-child {
+    margin-top: 1.5rem;
+}
+
+.det-line span:first-child {
+    font-weight: bold;
+    display: inline-block;
+    min-width: 8rem; 
+}
+
+.buttons {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 1.5rem;
+}
