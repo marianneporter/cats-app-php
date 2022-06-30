@@ -27,14 +27,12 @@ function updateCatForForm($id) {
 
 
 function handleSubmittedForm($id=0) {    
-    var_dump($_POST);
     $cat = new stdClass();
     $cat->id      = isset($_POST['id'])   ?  $_POST['id'] : 0;  
     $cat->name    = isset($_POST['name']) ? $_POST['name'] : '';
     $cat->dob     = isset($_POST['dob']) && $_POST['dob'] != '' ? DateFunctions::displayToDBFormat($_POST['dob']) : '';
     $cat->colour  = isset($_POST['colour']) ? $_POST['colour'] : '' ;
     $cat->favFood = isset($_POST['favFood']) ? $_POST['favFood'] : '';    
-    var_dump($cat);
     $errors = array('name' => '', 'dob' => '', 'colour' => '', 'favFood' => '');
  
     if($cat->name == '') {
