@@ -11,13 +11,9 @@ if ($db == null) {
 require_once('./database/dbQueries.php');
 $dbQueries = new DB_Queries();
 
-require_once('./utility/dates.php');
-
 $cat->name= trim($cat->name);
 
-$cat->DBdob = DateFunctions::inputToDBFormat($cat->dob);
-
-if ($cat->id == 0) {
+if ($cat->id == 0) {  
     $insertSuccess = $dbQueries->insertCat($db, $cat);
 
     if ($insertSuccess) {
@@ -26,6 +22,7 @@ if ($cat->id == 0) {
         header("Location: catslist.php?"."msg=addFailure"."&name=".$cat->name);
     }
 } else {
+   
     $updateSuccess = $dbQueries->updateCat($db, $cat);
 
     if ($updateSuccess) {

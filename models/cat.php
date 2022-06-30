@@ -13,7 +13,5 @@
             $this->colour = $colour;
             $this->favFood = $favFood;
         }
-
     }
-
 ?>

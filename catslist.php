@@ -46,7 +46,7 @@
                     <div class="cats-list-row">
                         <div class="cat-detail"><?php echo $cats[$i]["name"] ?></div>  
                         <div class="cat-detail">
-                            <?php echo DateFunctions::YYYYMMDDtoDisplayFormat($cats[$i]["dob"]) ?>
+                            <?php echo DateFunctions::dbToDisplayFormat($cats[$i]["dob"]) ?>
                         </div>  
                         <div class="cat-detail"><?php echo $cats[$i]["colour"] ?></div> 
                         <div class="cat-detail"><?php echo $cats[$i]["fav_food"] ?></div>

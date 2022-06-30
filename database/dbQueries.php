@@ -42,7 +42,7 @@ class DB_Queries {
                          VALUES (:name, :dob,  :colour, :favFood )";
             $stmt = $db->prepare($sql);
             $stmt->bindparam(':name', $cat->name);
-            $stmt->bindparam(':dob', $cat->DBdob);
+            $stmt->bindparam(':dob', $cat->dob);
             $stmt->bindparam(':colour', $cat->colour);
             $stmt->bindparam(':favFood', $cat->favFood);
  
@@ -55,6 +55,8 @@ class DB_Queries {
 
     public function updateCat($db, $cat) {
          try {
+             echo 'in update cat dbqueries';
+             var_dump($cat);
             $sql  = "UPDATE cats ";
             $sql .= " SET name   = :name,";
             $sql .= " dob = :dob,";
@@ -64,7 +66,7 @@ class DB_Queries {
             $stmt = $db->prepare($sql);
             $stmt->bindparam(':id', $cat->id);
             $stmt->bindparam(':name', $cat->name);
-            $stmt->bindparam(':dob', $cat->DBdob);
+            $stmt->bindparam(':dob', $cat->dob);
             $stmt->bindparam(':colour', $cat->colour);
             $stmt->bindparam(':favFood', $cat->favFood); 
             $stmt->execute();

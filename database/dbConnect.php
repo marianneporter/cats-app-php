@@ -4,11 +4,9 @@
 	*
 	*/		
 	
-	class DB_Connect { 
-	
+	class DB_Connect { 	
       
-        protected $pdo;
-		
+        protected $pdo;		
 	
 	    /**
 		*  Create PDO object and connect to DB and check if connection was successful.
@@ -37,7 +35,5 @@
                 echo $e;
                 return null;
             }
-			
-
 		}
 	}

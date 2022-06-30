@@ -2,4 +2,7 @@
 
 ## External software used
 
-### Bootstrap 5 Datepicker with Vanilla JS - CodeHim
+### Bootstrap 5 
+
+### jQuery Datepicker
+

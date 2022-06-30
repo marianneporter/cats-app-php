@@ -18,46 +18,25 @@ function addCatForForm() {
 //initial handling for update the first time this page is routed to
 //db is accessed to get the current field values for the stored cat
 function updateCatForForm($id) {
-    // require_once('./database/dbConnect.php');
-    // $dbConnection = new DB_Connect(); 
-    // $db = $dbConnection->CreateConnection();
-    // if ($db == null) {    
-    //     echo "connection failure";
-    //     header("Location: error.php");
-    // }
-    // else {
-    //     require_once('./database/dbQueries.php');
-    //     $dbQueries = new DB_Queries();
-    //     $catData = $dbQueries->getCatById($db, $id);
-    //     $cat = new stdClass();
-    //     $cat->id = $catData->id;
-    //     $cat->name=$catData->name;
-    //     $cat->dob=DateFunctions::DBToInputFormat($catData->dob);
-    //     $cat->colour=$catData->colour;
-    //     $cat->favFood=$catData->fav_food;
 
-    //     return (object) $cat;
-    // }    
-    
     require_once('includes/getCatObject.php');
 
-    return getCatObject($id);
-   
+    return getCatObject($id);   
 
 }
 
 
 function handleSubmittedForm($id=0) {    
-   
+    var_dump($_POST);
     $cat = new stdClass();
-    $cat->id      = isset($_POST['id']) ?  $_POST['id'] : 0;  
+    $cat->id      = isset($_POST['id'])   ?  $_POST['id'] : 0;  
     $cat->name    = isset($_POST['name']) ? $_POST['name'] : '';
-    $cat->dob     = isset($_POST['dob']) ? $_POST['dob'] : '';
+    $cat->dob     = isset($_POST['dob']) && $_POST['dob'] != '' ? DateFunctions::displayToDBFormat($_POST['dob']) : '';
     $cat->colour  = isset($_POST['colour']) ? $_POST['colour'] : '' ;
     $cat->favFood = isset($_POST['favFood']) ? $_POST['favFood'] : '';    
-
+    var_dump($cat);
     $errors = array('name' => '', 'dob' => '', 'colour' => '', 'favFood' => '');
-
+ 
     if($cat->name == '') {
         $errors['name'] = "Cat's name is required";            
     } else {
@@ -86,13 +65,13 @@ function handleSubmittedForm($id=0) {
        
 } 
 
+
 if (isset($_POST['submit'])) {
     //handle processing for submitted form
 
     $submissionResult=handleSubmittedForm();
     $errors = $submissionResult['errors'];  
-    $cat    = $submissionResult['cat'];  
-
+    $cat    = $submissionResult['cat'];    
     if (!array_filter($errors)) {
         // do add or update for valid cat
         require_once('includes/updateDB.php');
@@ -128,22 +107,19 @@ if (isset($_POST['submit'])) {
             <div class="text-danger"><?php echo $errors['name']?></div>    
         </div>
 
-        <!-- <div class="mb-4">
+        <div class="mb-3">
             <div>
                 <label class="form-label">Date of Birth</label>
-                <div class="input-group">
-                    <i class="bi bi-calendar-date input-group-text"></i>
-                    <input type="text" name="dob"
-                    class="datepicker_input form-control"
-                    value="<?php echo htmlspecialchars($cat->dob) ?>">                    
-                </div>  
+                <input type="text" class="form-control"
+                    id="dob" name="dob" readonly="readonly"
+                    style="background-color: white;"
+                    value="<?php echo htmlspecialchars(DateFunctions::dbToDisplayFormat($cat->dob)) ?>">                 
             </div>
-            <div class="text-danger"><?php echo $errors['dob']?></div>
-        </div>            -->
+            <div class="text-danger"><?php echo $errors['dob']?></div>    
 
-        
+        </div>     
 
-        <div class="mb-4">
+        <div class="mb-3">
             <label class="form-label">Colour</label>
             <select class="form-select colour-select" name="colour" >  
                 <option hidden value="">Select Colour</option>       
@@ -182,6 +158,17 @@ if (isset($_POST['submit'])) {
     <?php require_once('includes/footer.php') ?> 
 
     <script>
+
+        $( function() {             
+            $( "#dob" ).datepicker({
+                dateFormat: "d M yy",
+                changeMonth: true,
+                changeYear: true,
+                maxDate: new Date,
+                yearRange: "-40:+0"
+            });
+        } );
+
         const catColour = '<?php echo $cat->colour ?>';        
      
         const colOptions = document.querySelectorAll('.colour-select option');    

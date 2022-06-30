@@ -16,7 +16,7 @@
             $cat = new stdClass();
             $cat->id = $id;
             $cat->name=$catData->name;
-            $cat->dob=DateFunctions::DBToInputFormat($catData->dob);
+            $cat->dob=$catData->dob;
             $cat->colour=$catData->colour;
             $cat->favFood=$catData->fav_food;
 

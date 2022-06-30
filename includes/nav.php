@@ -13,14 +13,3 @@
     </div>
   </div>
 </nav>
-
-
-<!-- 
-<nav>
-    <ul>
-        <li>Cats Application - PHP</li>
-        <li><a  href="index.php">Home</a></li>
-        <li><a href="catslist.php">Cats List</a></li>
-        <li><a href="about.php">About</a></li>
-    </ul>
-</nav> -->
