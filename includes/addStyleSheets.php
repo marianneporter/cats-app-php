@@ -23,3 +23,9 @@
          if ($route === "delete") { ?> 
             <link rel="stylesheet" href="css/delete.css">
     <?php } ?>    
+
+    <?php
+         if ($route === "register") { ?> 
+            <link rel="stylesheet" href="css/register.css">
+    <?php } ?>  
+

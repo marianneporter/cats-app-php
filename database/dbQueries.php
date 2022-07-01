@@ -1,7 +1,5 @@
 <?php
 
-require_once('./models/cat.php');
-
 class DB_Queries {
 
     public function getCats($db) {
@@ -82,9 +80,6 @@ class DB_Queries {
             $sql .= " WHERE id = :id";
             echo $sql;
             echo $id;
- 
-
-
             $stmt = $db->prepare($sql);
             $stmt->bindparam(':id', $id); 
             $stmt->execute();

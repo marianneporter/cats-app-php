@@ -11,5 +11,9 @@
         <a class="nav-link" href="about.php">About</a>
       </div>
     </div>
+    <div class="login-nav mr-2">
+          <a class="nav-link" href="register.php">Register</a>
+    </div>
   </div>
 </nav>
+
