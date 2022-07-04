@@ -3,7 +3,14 @@
  ?>   
     <h1>Welcome to the Cats App PHP version</h1>
 
-        
-<?php require_once('includes/footer.php') ?> 
+    <?php       
+        if (isset($_GET['authMsg'])) {
+            echo ($_GET['authMsg']);
+            require_once('includes/authStatusMsg.php');
+        }
+    ?>
 
-    
+
+ <?php      
+ require_once('includes/footer.php'); 
+ ?>    

@@ -8,7 +8,9 @@ class Messages {
         "updateSuccess" => "has been successfully updated",
         "updateFailure" => "cannot be updated at this time",
         "deleteSuccess" => "has been successfully deleted",
-        "deleteFailure" => "cannot be deleted at this time"        
+        "deleteFailure" => "cannot be deleted at this time", 
+        "regSuccess"    => "Congratulations! You have registered successfully",
+        "regFailure"    => "Sorry! registration is not currently available"       
     );
    
     public static function getMessage($requiredMessage, $name="") { 
@@ -16,6 +18,15 @@ class Messages {
         return $name == "" ? self::MESSAGES[$requiredMessage]
                            : $name . " " . self::MESSAGES[$requiredMessage];
     }
+
+    public static function getAuthMessage($msg) { 
+        
+        return  self::MESSAGES[$msg];
+                           
+    }
+
+
+
 }
 
 ?>

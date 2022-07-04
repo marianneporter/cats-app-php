@@ -27,7 +27,7 @@
     <?php } ?>    
 
     <?php
-         if ($route === "register") { ?> 
+         if ($route === "register" || $route === "login") { ?> 
             <link rel="stylesheet" href="css/register.css">
     <?php } ?>  
 

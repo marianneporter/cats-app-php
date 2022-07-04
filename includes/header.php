@@ -1,3 +1,15 @@
+<?php 
+    session_start();  
+   
+    $url=$_SERVER['PHP_SELF'];
+
+    if (!strpos($url, 'login') && !strpos($url, 'register') && !strPos($url, 'error')) {
+        if (!isset($_SESSION['firstName'])) {            
+            header("Location: login.php");
+        }
+    } 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

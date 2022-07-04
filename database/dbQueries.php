@@ -16,14 +16,13 @@ class DB_Queries {
         }           
     }  
 
-    public function getCatById($db, $id) {    
-      
-        $sql = "SELECT * FROM `cats` "; 
-        $sql .= " WHERE id = :id";
-        $stmt = $db->prepare($sql);
-        $stmt->bindparam(':id', $id);
+    public function getCatById($db, $id) {   
 
         try {
+            $sql = "SELECT * FROM `cats` "; 
+            $sql .= " WHERE id = :id";
+            $stmt = $db->prepare($sql);
+            $stmt->bindparam(':id', $id);        
             $res = $stmt->execute();         
             $cat = $stmt->fetchObject();  
             return $cat;        
@@ -53,8 +52,6 @@ class DB_Queries {
 
     public function updateCat($db, $cat) {
          try {
-             echo 'in update cat dbqueries';
-             var_dump($cat);
             $sql  = "UPDATE cats ";
             $sql .= " SET name   = :name,";
             $sql .= " dob = :dob,";
@@ -87,7 +84,7 @@ class DB_Queries {
         } catch (Exception $e) {
             return false;            
         }           
-    }
+    }    
 }
 ?>
 

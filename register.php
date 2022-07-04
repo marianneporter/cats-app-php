@@ -5,78 +5,112 @@ require_once 'utility/dates.php';
 
 // initial handling for first time this page is routed to
 function initRegisterDetails() {   
-    $user = new stdClass; 
+    $user = new \stdClass(); 
     $user->email ="";
     $user->firstName = "";
     $user->lastName = "";
     $user->password ="";
-    $user->confirmPassword = "";
-   
+    $user->confirmPassword = "";   
     return $user;
 }
 
 
 
-function handleSubmittedForm($id=0) {    
-    // $cat = new stdClass();
-    // $cat->id      = isset($_POST['id'])   ?  $_POST['id'] : 0;  
-    // $cat->name    = isset($_POST['name']) ? $_POST['name'] : '';
-    // $cat->dob     = isset($_POST['dob']) && $_POST['dob'] != '' ? DateFunctions::displayToDBFormat($_POST['dob']) : '';
-    // $cat->colour  = isset($_POST['colour']) ? $_POST['colour'] : '' ;
-    // $cat->favFood = isset($_POST['favFood']) ? $_POST['favFood'] : '';    
-    // $errors = array('name' => '', 'dob' => '', 'colour' => '', 'favFood' => '');
- 
-    // if($cat->name == '') {
-    //     $errors['name'] = "Cat's name is required";            
-    // } else {
+function handleSubmittedForm() {    
+    $user = new stdClass();   
+    $user->email           = isset($_POST['email']) ? 
+                             trim($_POST['email']) : '';
+    $user->firstName       = isset($_POST['first-name']) ?
+                             trim($_POST['first-name']) : '';
+    $user->lastName        = isset($_POST['last-name']) ?
+                             trim($_POST['last-name']) : '' ;
+    $user->password        = isset($_POST['password']) ?
+                             trim($_POST['password']) : '';  
+    $user->confirmPassword = isset($_POST['confirm-password']) ?
+                             trim($_POST['confirm-password']) : '';  
+
+
+    $errors = array('email' => '',
+                    'firstName' => '',
+                    'lastName' => '',
+                    'password' => '',
+                    'confirmPassword' => '');
+
+    if($user->email == '') {
+        $errors['email'] = "Email is required";            
+    } else {
       
-    //     if(!preg_match('/^[a-zA-Z\s]+$/', $cat->name)) {
-    //         $errors['name'] = "Name must contain only letters and spaces";
-    //     }
-    // }
+        if(!preg_match('/^([a-z\d\.-]+)@([a-z\d]+)\.([a-z]{2,8})(\.[a-z]{2,8})?$/', $user->email)) {
+            $errors['email'] = "Please enter a valid email";
+        }
+    }
 
-    // if($cat->dob=='') {
-    //     $errors['dob'] = "Cat's date of birth is required";
-    // }  
+    if($user->firstName == '') {
+        $errors['firstName'] = "First Name is required";            
+    } else {      
+        if(!preg_match('/^[a-zA-Z\-\s]+$/', $user->firstName)) {
+            $errors['firstName'] ="Please enter a valid first name";
+        }
+    }
 
-    // if($cat->colour=='') {        
-    //     $errors['colour'] = "Cat's colour is required";
-    // } 
+    if($user->lastName == '') {
+        $errors['lastName'] = "Last Name is required";            
+    } else {      
+        if(!preg_match('/^[a-zA-Z\-\s]+$/', $user->lastName)) {
+            $errors['lastName'] ="Please enter a valid last name";
+        }
+    }
 
-    // if($cat->favFood=='') {        
-    //     $errors['favFood'] = "Cat's favourite food is required";
-    // }  
+    if($user->password == '') {
+        $errors['password'] = "Password is required";            
+    } else {      
+        if(!preg_match('/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/', $user->password)) {
+            $errors['password'] ="Password must contain at least 8 characters, 1 letter and 1 number";
+        }
+    }
 
-    // return [
-    //     "cat" => $cat,
-    //     "errors" => $errors
-    // ];
+    if($user->confirmPassword == '') {
+        $errors['confirmPassword'] = "Confirm Password is required";            
+    } 
+
+    if($user->password != '' && $user->confirmPassword !='') {
+        if ($user->password != $user->confirmPassword) {
+            $errors["confirmPassword"] =  "Password and Confirm password do not match";
+        }
+    }
+
+    return [
+        "user" => $user,
+        "errors" => $errors
+    ];
        
 } 
 
 
 if (isset($_POST['submit'])) {
+  
     //handle processing for submitted form
 
-    // $submissionResult=handleSubmittedForm();
-    // $errors = $submissionResult['errors'];  
-    // $cat    = $submissionResult['cat'];    
-    // if (!array_filter($errors)) {
-    //     // do add or update for valid cat
-    //     require_once('includes/updateDB.php');
-    // } 
-        echo 'form submitted';
+    $submissionResult=handleSubmittedForm();
+    $errors = $submissionResult['errors'];  
+    $user   = $submissionResult['user'];    
+
+    if (!array_filter($errors)) {
+        // add user to users table
+        require_once('includes/registerUser.php');
+    }
+  
 } else {
 
     // handle processing for unsubmitted (freshly displayed form)
     $user=initRegisterDetails();
-    $errors = array('email' => '', 'firstName' => '', 'lastName' => '', 'password' => '', 'repeatPassword' => '');
+    $errors = array('email' => '', 'firstName' => '', 'lastName' => '', 'password' => '', 'confirmPassword' => '');
  
 }
 ?>
 
 <div class="add-update">
-    <h3 class="mt-5">Register</h3>
+    <h3 class="mt-3">Register</h3>
 
     <form method="post" action="<?php echo $_SERVER['PHP_SELF'] ?>" > 
      
@@ -126,9 +160,9 @@ if (isset($_POST['submit'])) {
                 <label class="form-label">Confirm Password</label>
                 <input type="password" class="form-control"
                     id="confirm-password" name="confirm-password" 
-                    value="<?php echo htmlspecialchars($user->lastName) ?>">                 
+                    value="<?php echo htmlspecialchars($user->confirmPassword) ?>">                 
             </div>
-            <div class="text-danger"><?php echo $errors['lastName']?></div>              
+            <div class="text-danger"><?php echo $errors['confirmPassword']?></div>              
         </div> 
       
         <button type="submit"
