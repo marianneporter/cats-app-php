@@ -1,14 +1,23 @@
+/* All Screen Widths */
 h3 {
     margin-top: 2rem;
 }
 
+
+.add-area {
+    margin-right: 3rem;
+    text-align: right;
+}
+
+/* medium large and extra large screens */
 .col-heading { 
     font-weight: bold;
 }
 
-
 .cats-list-row { 
     display: flex;    
+   
+    justify-content: center;
     line-height: 4rem;    
     border-bottom: 0.2px solid #BEBEBE;   
 }
@@ -19,14 +28,33 @@ h3 {
 
 
 .col-heading, .cat-detail {
-    flex: 0 1 12rem;
+    flex: 1 1 10rem;
 }
 
-.button-col {
-    flex: 0 1 8rem;
+.buttons-col {
+    flex: 0 1 10rem;  
+    display: flex;  
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
 }
 
-.add-area {
-    margin-right: 3rem;
-    text-align: right;
+/* small screens */
+
+.small-screens {
+    display: flex;
 }
+
+.cat-cards {
+    display: flex;
+    flex-wrap: wrap;   
+ 
+}
+
+.card-content {
+    width: 15rem;
+    border: 0.1rem solid black;
+    margin: 1rem;
+    padding: 1rem;
+}
+
