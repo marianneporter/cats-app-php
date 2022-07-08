@@ -24,9 +24,6 @@ class Messages {
         return  self::MESSAGES[$msg];
                            
     }
-
-
-
 }
 
 ?>

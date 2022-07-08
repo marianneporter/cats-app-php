@@ -3,7 +3,6 @@ h3 {
     margin-top: 2rem;
 }
 
-
 .add-area {
     margin-right: 3rem;
     text-align: right;
@@ -41,14 +40,13 @@ h3 {
 
 /* small screens */
 
-.small-screens {
-    display: flex;
-}
-
 .cat-cards {
     display: flex;
-    flex-wrap: wrap;   
- 
+    flex-wrap: wrap;  
+}
+
+.card-content h6 {
+    display: inline-block;
 }
 
 .card-content {

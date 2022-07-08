@@ -1,6 +1,5 @@
 <?php 
     class DB_Auth {
-
         
         public function emailExists($db, $email) {  
 

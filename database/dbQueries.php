@@ -4,7 +4,7 @@ class DB_Queries {
 
     public function getCats($db) {
       
-        $stmt  = $db->prepare("SELECT * FROM `cats`");        
+        $stmt  = $db->prepare("SELECT * FROM `cats` ORDER BY name");        
         
         try {
             $res = $stmt->execute();         

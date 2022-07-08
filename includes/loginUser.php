@@ -24,17 +24,4 @@
         header("Location: error.php");
     }
 
-
-
-    // $registerResult = $dbAuth->registerUser($db, $user);
-    // echo $registerResult;
-
-    // if ($registerResult=="success") {
-    //     header("Location: index.php?authMsg=regSuccess");
-    // } else if ($registerResult=="emailError") {
-    //     $errors['email'] = "Email is already registered";
-    // } else {
-    //     header("Location: index.php?authMsg=regFailure");
-    // }
-
 ?>

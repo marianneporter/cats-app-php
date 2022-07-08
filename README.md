@@ -1,6 +1,6 @@
 # PHP Demonstration crud application
 
-## External software used
+## External libraries used
 
 ### Bootstrap 5 
 

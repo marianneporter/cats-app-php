@@ -29,8 +29,6 @@ if ($cat->id == 0) {
         header("Location: catslist.php?"."msg=updateSuccess"."&name=".$cat->name);
     } else {
         header("Location: catslist.php?"."msg=updateFailure"."&name=".$cat->name);
-    }    
-
+    }   
 }
-
 ?>
