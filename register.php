@@ -64,7 +64,7 @@ function handleSubmittedForm() {
     if($user->password == '') {
         $errors['password'] = "Password is required";            
     } else {      
-        if(!preg_match('/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/', $user->password)) {
+        if(!preg_match('/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/', $user->password)) {
             $errors['password'] ="Password must contain at least 8 characters, 1 letter and 1 number";
         }
     }

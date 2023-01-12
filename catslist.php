@@ -25,7 +25,7 @@
    
 ?>  
     
-    <h2 class="mt-5" >All Cats</h2>
+    <h2 class="mt-3" >All Cats</h2>
     <div class="add-area">
         <a href="add-update.php" class="btn btn-primary add-btn">Add Cat</a>
     </div>

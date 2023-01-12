@@ -90,11 +90,11 @@ if (isset($_POST['submit'])) {
 ?>
 
 <div class="add-update">
-    <h3 class="mt-5"><?php echo $cat->id=='0' ? 'Add' : 'Update'  ?> Cat</h3>
+    <h3 class="mt-3"><?php echo $cat->id=='0' ? 'Add' : 'Update'  ?> Cat</h3>
 
     <form method="post" action="<?php echo $_SERVER['PHP_SELF'] ?>" > 
         <input value="<?php echo $cat->id ?>" type="hidden" name="id" > 
-        <div class="mb-3">
+        <div class="mt-2 mb-3">
             <div>
                 <label class="form-label">Cat's Name</label>
                 <input type="text"
@@ -145,7 +145,7 @@ if (isset($_POST['submit'])) {
             </select>  
             <div class="text-danger"><?php echo $errors['favFood']?></div>     
         </div>
-        <div class="mb-3 button-set">
+        <div class="mb-5 button-set">
             <a href="catslist.php" class="btn btn-secondary">Cancel</a> 
             <button type="submit"
                     class="btn btn-success"
