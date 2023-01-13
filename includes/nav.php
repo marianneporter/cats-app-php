@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="max-height: 4rem; min-width: 100%">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="min-width: 100%">
   <div class="container-fluid">
     <a class="navbar-brand" style="min-width: 10rem"  href="#">Cats App PHP</a>
     <button class="navbar-toggler" type="button"
