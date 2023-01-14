@@ -12,6 +12,17 @@
     <?php } ?>   
 
     <?php
+         if ($route === "index") { ?> 
+            <link rel="stylesheet" href="css/home.css">
+    <?php } ?>   
+
+    <?php
+         if ($route === "about") { ?> 
+            <link rel="stylesheet" href="css/about.css">
+    <?php } ?>  
+
+
+    <?php
          if ($route === "add-update") { ?>    
             <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
             <link rel="stylesheet" href="/resources/demos/style.css">

@@ -8,14 +8,17 @@ h3 {
     text-align: right;
 }
 
+.container-sm {
+    max-width: 50rem;
+}
+
 /* medium large and extra large screens */
 .col-heading { 
     font-weight: bold;
 }
 
 .cats-list-row { 
-    display: flex;    
-   
+    display: flex;     
     justify-content: center;
     line-height: 4rem;    
     border-bottom: 0.2px solid #BEBEBE;   
@@ -24,7 +27,6 @@ h3 {
 .cats-list-col-headings {
     line-height: 2rem;
 }
-
 
 .col-heading, .cat-detail {
     flex: 1 1 10rem;

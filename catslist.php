@@ -1,6 +1,6 @@
 <?php 
     require_once('database/dbConnect.php');
-    $dbConnection = new DB_Connect(); 
+    $dbConnection = new DB_Connect();
     $db = $dbConnection->CreateConnection();
     if ($db == null) {    
         echo "connection failure";
@@ -25,13 +25,13 @@
    
 ?>  
     
-    <h2 class="mt-3" >All Cats</h2>
+    <h2 class="pt-5" >All Cats</h2>
     <div class="add-area">
-        <a href="add-update.php" class="btn btn-primary add-btn">Add Cat</a>
+        <a href="add-update.php" class="btn btn-primary add-btn mt-3">Add Cat</a>
     </div>
 
-    <div class="d-none d-lg-block">
-        <table class="table">
+    <div class="d-none d-lg-block px-3">
+        <table class="table ">
             <thead>
                 <tr>
                     <th>Name</th>

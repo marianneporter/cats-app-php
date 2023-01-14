@@ -95,24 +95,24 @@ if (isset($_POST['submit'])) {
     <form method="post" action="<?php echo $_SERVER['PHP_SELF'] ?>" > 
         <input value="<?php echo $cat->id ?>" type="hidden" name="id" > 
         <div class="mt-2 mb-3">
-            <div>
+          
                 <label class="form-label">Cat's Name</label>
                 <input type="text"
                        class="form-control"
                        id="name" name="name"
                        value="<?php echo htmlspecialchars($cat->name) ?>">  
-            </div>
+           
             <div class="text-danger"><?php echo $errors['name']?></div>    
         </div>
 
         <div class="mb-3">
-            <div>
+           
                 <label class="form-label">Date of Birth</label>
                 <input type="text" class="form-control"
                     id="dob" name="dob" readonly="readonly"
                     style="background-color: white;"
                     value="<?php echo htmlspecialchars(DateFunctions::dbToDisplayFormat($cat->dob)) ?>">                 
-            </div>
+           
             <div class="text-danger"><?php echo $errors['dob']?></div>    
 
         </div>     

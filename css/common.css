@@ -3,31 +3,31 @@
     margin: 0; padding: 0;
 }
 
-body {   
-    position: relative;    
+@media screen and (min-width: 576px ) {
+    body {   
+        position: relative;    
+    }
+    
+    body:after {
+        content: "";
+        position: absolute; 
+        background-image: url("../images/background2.jpg");
+        background-position: top-left;
+        background-size: cover;
+        background-repeat: no-repeat;
+        opacity: 0.4;   
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: -1;    
+        min-height: 100vh;    
+    }
 }
 
-body:after {
-    content: "";
-    position: absolute; 
-    background-image: url("../images/background2.jpg");
-    background-position: top-left;
-    background-size: cover;
-    background-repeat: no-repeat;
-    opacity: 0.4;   
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: -1;    
-}
-
-.content {  
-    max-width: 60rem;
-    min-height: 100vh;
-    margin: 0 auto;
-    background-color: white;
-    padding: 4rem;
+.container-sm {
+    min-height: calc(100vh - 3.5rem);
+    background-color: white;    
 }
 
 .btn {

@@ -67,22 +67,22 @@ if (isset($_POST['submit'])) {
 }
 ?>
 
-<div class="add-update">
-    <h3 class="mt-3">Login</h3>
+<div class="content pt-5">
+    <h3>Login</h3>
 
     <form method="post" action="<?php echo $_SERVER['PHP_SELF'] ?>" > 
-     
+        
         <div class="mb-3">
             <div>
                 <label class="form-label">Email</label>
                 <input type="text"
-                       class="form-control"
-                       id="email" name="email"
-                       value="<?php echo htmlspecialchars($loginCreds->email) ?>">  
+                        class="form-control"
+                        id="email" name="email"
+                        value="<?php echo htmlspecialchars($loginCreds->email) ?>">  
             </div>
             <div class="text-danger"><?php echo $errors['email']?></div>    
         </div>
- 
+
 
         <div class="mb-3">
             <div>
@@ -93,11 +93,15 @@ if (isset($_POST['submit'])) {
             </div>
             <div class="text-danger"><?php echo $errors['password']?></div>              
         </div> 
-      
+        
         <button type="submit"
                 class="btn btn-success"
                 name="submit">Login</button>
-     
+        
     </form>
 </div>
+
+
+
+
 <?php require_once('includes/footer.php') ?> 

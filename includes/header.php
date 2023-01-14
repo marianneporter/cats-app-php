@@ -1,5 +1,5 @@
 <?php 
-    session_start();  
+    session_start();     
    
     $url=$_SERVER['PHP_SELF'];
 
@@ -20,11 +20,17 @@
     <?php 
          require_once('addStyleSheets.php');
     ?>
-   
+    <link rel ="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
+    <link rel ="icon" type="image/png" href="favicon-16x16.png" sizes="16x16">
+
     <title>Cats App PHP</title>
 </head>
+
 <body>
-    <?php require_once('includes/nav.php'); ?>        
-    <div class="content">
+    
+<?php require_once('includes/nav.php'); ?>      
+    <div class="container-sm">
+      
+
 
    

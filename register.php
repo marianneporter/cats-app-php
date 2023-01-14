@@ -109,39 +109,33 @@ if (isset($_POST['submit'])) {
 }
 ?>
 
-<div class="add-update">
-    <h3 class="mt-3">Register</h3>
+<div >
+    <h3 class="pt-5">Register</h3>
 
     <form method="post" action="<?php echo $_SERVER['PHP_SELF'] ?>" > 
      
-        <div class="mb-3">
-            <div>
-                <label class="form-label">Email</label>
-                <input type="text"
-                       class="form-control"
-                       id="email" name="email"
-                       value="<?php echo htmlspecialchars($user->email) ?>">  
-            </div>
+        <div class="mb-3">          
+            <label class="form-label">Email</label>
+            <input type="text"
+                    class="form-control"
+                    id="email" name="email"
+                    value="<?php echo htmlspecialchars($user->email) ?>">           
             <div class="text-danger"><?php echo $errors['email']?></div>    
         </div>
 
-        <div class="mb-3">
-            <div>
-                <label class="form-label">First Name</label>
-                <input type="text" class="form-control"
-                    id="first-name" name="first-name" 
-                    value="<?php echo htmlspecialchars($user->firstName) ?>">                 
-            </div>
+        <div class="mb-3">           
+            <label class="form-label">First Name</label>
+            <input type="text" class="form-control"
+                id="first-name" name="first-name" 
+                value="<?php echo htmlspecialchars($user->firstName) ?>">              
             <div class="text-danger"><?php echo $errors['firstName']?></div>  
         </div>     
 
-        <div class="mb-3">
-            <div>
-                <label class="form-label">Last Name</label>
-                <input type="text" class="form-control"
-                    id="last-name" name="last-name" 
-                    value="<?php echo htmlspecialchars($user->lastName) ?>">                 
-            </div>
+        <div class="mb-3">           
+            <label class="form-label">Last Name</label>
+            <input type="text" class="form-control"
+                id="last-name" name="last-name" 
+                value="<?php echo htmlspecialchars($user->lastName) ?>">              
             <div class="text-danger"><?php echo $errors['lastName']?></div>              
         </div>
 
