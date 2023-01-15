@@ -30,8 +30,10 @@
 			// Set DSN
 			$dsn='mysql:host='.$host.';dbname='.$dbName;
 
+            echo $dsn;
+
             try {
-                $this->pdo=new PDO($dsn, $username, $password);	
+                $this->pdo=new PDO($dsn, $user, $pass);	
                 $this->pdo->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
                 $this->pdo->setAttribute( PDO::ATTR_EMULATE_PREPARES, false );
                 return $this->pdo;       
