@@ -70,7 +70,7 @@
             
             if (password_verify($loginCreds->password, $userData->user->password)) {
                 $_SESSION['firstName'] = $userData->user->first_name;
-                $_SESSION['lastName']  = $userDate->user->last_name;
+                $_SESSION['lastName']  = $userData->user->last_name;
                 return "loginSuccess";
             } else {
                 return "wrongPasswordError";
