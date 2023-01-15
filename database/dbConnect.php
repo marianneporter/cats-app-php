@@ -15,10 +15,16 @@
 		*/
 		public function CreateConnection() { 
 
-            $host = 'localhost';
-            $dbName = 'cats_db';
-            $username = 'root';
-            $password ='';
+        //    $host = 'localhost';
+        //    $dbName = 'cats_db';
+        //    $username = 'root';
+        //    $password ='';
+        //    $charset = 'utf8mb4';
+
+            $host = 'eu-cdbr-west-03.cleardb.net';
+            $dbName = 'heroku_25a13e34a818616';
+            $user = 'bf2ff53d063109';
+            $pass ='8245d001';
             $charset = 'utf8mb4';
 			          
 			// Set DSN
