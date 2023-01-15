@@ -30,7 +30,7 @@
 			// Set DSN
 			$dsn='mysql:host='.$host.';dbname='.$dbName;
 
-            echo $dsn;
+            echo $_SERVER['SERVER_NAME'];
 
             try {
                 $this->pdo=new PDO($dsn, $user, $pass);	
