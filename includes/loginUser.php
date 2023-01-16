@@ -1,6 +1,8 @@
 <?php 
 
+   
     require_once('./database/dbConnect.php');
+    
     $dbConnection = new DB_Connect(); 
     $db = $dbConnection->CreateConnection();
     if ($db == null) {    
