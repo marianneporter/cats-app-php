@@ -3,8 +3,7 @@
     require_once('./database/dbConnect.php');
     $dbConnection = new DB_Connect(); 
     $db = $dbConnection->CreateConnection();
-    if ($db == null) {    
-        echo "connection failure";
+    if ($db == null) {  
         header("Location: error.php");
     }
 
@@ -12,7 +11,6 @@
     $dbAuth = new DB_Auth();
 
     $registerResult = $dbAuth->registerUser($db, $user);
-    echo $registerResult;
 
     if ($registerResult=="success") {
         header("Location: index.php?authMsg=regSuccess");

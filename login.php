@@ -14,12 +14,8 @@ function initLoginDetails() {
 
 function handleSubmittedForm() {    
     $loginCreds = new stdClass();   
-    $loginCreds->email           = isset($_POST['email']) ? 
-                             trim($_POST['email']) : ''; 
-    $loginCreds->password        = isset($_POST['password']) ?
-                             trim($_POST['password']) : '';  
- 
-
+    $loginCreds->email = isset($_POST['email']) ? trim($_POST['email']) : ''; 
+    $loginCreds->password = isset($_POST['password']) ? trim($_POST['password']) : '';  
 
     $errors = array('email' => '',                
                     'password' => '',
@@ -100,8 +96,5 @@ if (isset($_POST['submit'])) {
         
     </form>
 </div>
-
-
-
 
 <?php require_once('includes/footer.php') ?> 

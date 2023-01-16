@@ -6,7 +6,6 @@
         $dbConnection = new DB_Connect(); 
         $db = $dbConnection->CreateConnection();
         if ($db == null) {    
-            echo "connection failure";
             header("Location: error.php");
         }
         else {

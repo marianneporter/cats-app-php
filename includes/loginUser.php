@@ -1,16 +1,12 @@
 <?php 
-
    
     require_once('./database/dbConnect.php');
     
     $dbConnection = new DB_Connect(); 
     $db = $dbConnection->CreateConnection();
-    if ($db == null) {    
-        echo "connection failure";
-     //   header("Location: error.php");
+    if ($db == null) {        
+       header("Location: error.php");
     }
-
-
 
     require_once('./database/dbAuth.php');
     $dbAuth = new DB_Auth();

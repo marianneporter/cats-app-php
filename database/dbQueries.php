@@ -74,9 +74,7 @@ class DB_Queries {
     public function deleteCat($db, $id) {
         try {
             $sql  = "DELETE FROM `cats` ";
-            $sql .= " WHERE id = :id";
-            echo $sql;
-            echo $id;
+            $sql .= " WHERE id = :id"; 
             $stmt = $db->prepare($sql);
             $stmt->bindparam(':id', $id); 
             $stmt->execute();

@@ -107,11 +107,11 @@ if (isset($_POST['submit'])) {
 
         <div class="mb-3">
            
-                <label class="form-label">Date of Birth</label>
-                <input type="text" class="form-control"
-                    id="dob" name="dob" readonly="readonly"
-                    style="background-color: white;"
-                    value="<?php echo htmlspecialchars(DateFunctions::dbToDisplayFormat($cat->dob)) ?>">                 
+            <label class="form-label">Date of Birth</label>
+            <input type="text" class="form-control"
+                id="dob" name="dob" readonly="readonly"
+                style="background-color: white;"
+                value="<?php echo htmlspecialchars(DateFunctions::dbToDisplayFormat($cat->dob)) ?>">                 
            
             <div class="text-danger"><?php echo $errors['dob']?></div>    
 

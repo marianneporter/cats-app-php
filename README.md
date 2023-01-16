@@ -1,8 +1,9 @@
-# PHP Demonstration crud application
+# PHP Mini Demonstration App
 
-## External libraries used
+Developed during spring/summer of 2022 and completed in Jan 2023.
 
-### Bootstrap 5 
+Uses mySql database.
 
-### jQuery Datepicker
+Developed on xampp and Heroku.
 
+please contact me to get user ids and passwords to see Heroku app.
