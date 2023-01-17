@@ -21,8 +21,6 @@
 			// Set DSN
 			$dsn='mysql:host='.$host.';dbname='.$dbName;
 
-            echo $_SERVER['SERVER_NAME'];
-
             try {
                 $this->pdo=new PDO($dsn, $username, $password);	
                 $this->pdo->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
