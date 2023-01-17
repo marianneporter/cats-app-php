@@ -145,7 +145,7 @@ if (isset($_POST['submit'])) {
             </select>  
             <div class="text-danger"><?php echo $errors['favFood']?></div>     
         </div>
-        <div class="mb-5 button-set">
+        <div class="mb-5 d-sm-flex justify-content-around button-set">
             <a href="catslist.php" class="btn btn-secondary">Cancel</a> 
             <button type="submit"
                     class="btn btn-success"
