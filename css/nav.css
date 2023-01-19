@@ -2,6 +2,10 @@
     font-weight: bold; 
 }
 
-nav {
-    height: 3.5rem;
+
+@media screen and (min-width: 992px) {
+    nav {
+        height: 3.5rem;
+    }
 }
+

@@ -24,7 +24,7 @@
    
 ?>  
     
-    <h2 class="pt-5" >All Cats</h2>
+    <h2 class="all-cats-title" >All Cats</h2>
     <div class="add-area">
         <a href="add-update.php" class="btn btn-primary add-btn mt-3">Add Cat</a>
     </div>
@@ -73,4 +73,33 @@
         </div>                    
     </div>
         
-    <?php require_once('includes/footer.php') ?>    
+    <?php require_once('includes/footer.php') ?>   
+    
+    <script>
+
+        window.addEventListener('DOMContentLoaded', (event) => {
+            let statusAlert = document.querySelector('.alert');
+            if (statusAlert) {
+                let statusAlert = document.querySelector('.alert');
+                let title = document.querySelector('.all-cats-title');
+                console.log(title);
+                title.style.paddingTop = "0rem";
+                title.style.color = "red";
+                console.log('status alert exists');   
+                console.log(statusAlert);  
+                setTimeout(() => {
+                  //  statusAlert.style.opacity = 0;
+
+                    console.log('trying to remove class');
+                    console.log(statusAlert.classList);
+                    statusAlert.classList.remove('visible');
+                    statusAlert.classList.add('not-visible');
+                    console.log(statusAlert.classList);
+                }, 1000)                
+            } else {
+                console.log('status alert does not exist')
+            }
+        });    
+
+
+    </script>

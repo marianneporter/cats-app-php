@@ -34,28 +34,28 @@
 
 ?>
 
-    <h3>Are you sure you want to delete <?php echo $cat->name ?>?</h3>
+    <h3 class="pt-4 pb-3">Are you sure you want to delete <?php echo $cat->name ?>?</h3>
     <div class="cat-card">
-        <div class="det-line">
-            <span>Name:</span>
-            <span><?php echo $cat->name ?></span>
+        <div class="d-flex flex-column flex-sm-row justify-content-between mt-2">
+            <span class="label fw-bold ">Name:</span>
+            <span class="data-item"><?php echo $cat->name ?></span>
         </div>
-        <div class="det-line">
-            <span>Date of Birth:</span>
-            <span><?php echo $cat->dob ?></span>
+        <div class="d-flex flex-column flex-sm-row justify-content-between mt-2">
+            <span class="label fw-bold">Date of Birth:</span>
+            <span class="data-item"><?php echo $cat->dob ?></span>
         </div>  
-        <div class="det-line">
-            <span>Colour:</span>
-            <span><?php echo $cat->colour ?></span>
+        <div class="d-flex flex-column flex-sm-row justify-content-between mt-2">
+            <span class="label fw-bold">Colour:</span>
+            <span class="data-item"><?php echo $cat->colour ?></span>
         </div>  
-        <div class="det-line">
-            <span>Favourite Food:</span>
-            <span><?php echo $cat->favFood ?></span>
+        <div class="d-flex flex-column flex-sm-row justify-content-between mt-2">
+            <span class="label fw-bold">Favourite Food:</span>
+            <span class="data-item"><?php echo $cat->favFood ?></span>
         </div>   
 
         
     </div>
-    <div class="buttons">
+    <div class="btn-area">
         <a class="btn btn-secondary" href="catslist.php">Cancel</a>
         <form action="delete.php" method="POST">
             <input type="hidden" name="id" value="<?php echo $cat->id ?>">

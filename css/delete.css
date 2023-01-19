@@ -1,23 +1,38 @@
-.content {
-    width: 40rem;
+.container-sm {
+    max-width: 30rem;
 }
 
-.det-line {
-    line-height: 2;
+.label {
+    width: 8rem;    
 }
 
-.det-line:first-child {
-    margin-top: 1.5rem;
+.data-item {
+    width: 20rem;
 }
 
-.det-line span:first-child {
-    font-weight: bold;
-    display: inline-block;
-    min-width: 8rem; 
+
+@media screen and (max-width: 575px ) {
+    .btn-area {
+        margin-top: 1rem;
+    } 
+
+    .btn {
+        min-width: 100%;
+    }
+
+    .btn-area .btn-danger {
+        margin-top: 0.5rem;
+    }
 }
 
-.buttons {
-    margin-top: 1.5rem;
-    display: flex;
-    gap: 1.5rem;
+@media screen and (min-width: 576px ) {
+    .btn-area {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 2rem;
+    }
+
+    .btn {
+        min-width: 10rem;
+    }
 }

@@ -1,12 +1,12 @@
-.form-control input {
-    display: block;
-}
-
 .container-sm {
     max-width: 30rem;
 }
 
-@media screen and (max-width: 576px) {
+.form-control input {
+    display: block;
+}
+
+@media screen and (max-width: 575px) {
     .button-set * {
         width: 100%;
     }
@@ -17,8 +17,11 @@
 
 }
 
-@media screen and (min-width: 577px) {
+@media screen and (min-width: 576px) {
     .button-set * {
         width: 10rem;        
+    }
+    .add-update {
+        overflow: hidden;
     }
 }

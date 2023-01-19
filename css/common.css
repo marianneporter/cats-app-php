@@ -3,6 +3,20 @@
     margin: 0; padding: 0;
 }
 
+.not-visible {
+    transform: translateY(-20rem);
+ 
+}
+
+.visible {
+    transform: translateY(0);
+  
+}
+
+.alert {
+    transition: transform 5s;    
+}
+
 @media screen and (min-width: 576px ) {
     body {   
         position: relative;    
@@ -24,6 +38,7 @@
         min-height: 100vh;    
     }
 }
+
 
 .container-sm {
     min-height: calc(100vh - 3.5rem);

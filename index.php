@@ -1,7 +1,7 @@
 <?php 
     require_once('includes/header.php');
  ?>   
-    <h1>Welcome to the Cats App PHP version</h1>
+    <h1 class="mt-3">Welcome to the Cats App PHP version</h1>
 
     <?php       
         if (isset($_GET['authMsg'])) {

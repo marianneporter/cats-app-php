@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="min-width: 100vw">
-  <div class="container-fluid">
-    <a class="navbar-brand" style="min-width: 10rem"  href="#">Cats App PHP</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="min-width: 100vw; position: relative; z-index: 10">
+  <div class="container-fluid" >
+    <a class="navbar-brand" style="min-width: 10rem" href="#">Cats App PHP</a>
     <button class="navbar-toggler" type="button"
             data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" 
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,7 +22,7 @@
       <?php if( isset($_SESSION['firstName'])) { ?> 
         <ul class="d-flex navbar-nav mb-2 mb-lg-0">
           <li class="nav-item  d-none d-md-block" style="min-width: 12rem"><a class="nav-link" href="#">Logged in as <?php echo $_SESSION['firstName'] ?></a></li>
-          <li class="nav-item"><a class="nav-link" href="logout.php" >Logout</a><li>
+          <li class="nav-item pe-md-4"><a class="nav-link" href="logout.php" >Logout</a><li>
         </ul>
       <?php } else { ?>
         <ul class="d-flex navbar-nav mb-2 mb-lg-0">
