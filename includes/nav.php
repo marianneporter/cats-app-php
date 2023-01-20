@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="min-width: 100vw; position: relative; z-index: 10">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="min-width: 100vw; position: fixed; top:0; left:0; z-index: 10">
   <div class="container-fluid" >
     <a class="navbar-brand" style="min-width: 10rem" href="#">Cats App PHP</a>
     <button class="navbar-toggler" type="button"

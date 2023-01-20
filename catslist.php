@@ -23,38 +23,40 @@
     require_once('utility/dates.php');
    
 ?>  
-    
-    <h2 class="all-cats-title" >All Cats</h2>
-    <div class="add-area">
-        <a href="add-update.php" class="btn btn-primary add-btn mt-3">Add Cat</a>
+    <div style="position: relative; z-index: 1">
+        <h2 class="all-cats-title" >All Cats</h2>
+        <div class="add-area">
+            <a href="add-update.php" class="btn btn-primary add-btn mt-3">Add Cat</a>
+        </div>
+
+        <div class="d-none d-lg-block px-3">
+            <table class="table ">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Date of Birth</th>
+                        <th>Colour</th>
+                        <th>Favourite Food</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php for($i=0; $i<count($cats); $i++) {  ?>
+                        <tr>
+                            <td><?php echo $cats[$i]["name"] ?></td>  
+                            <td><?php echo DateFunctions::dbToDisplayFormat($cats[$i]["dob"]) ?></td>
+                            <td><?php echo $cats[$i]["colour"] ?></td> 
+                            <td><?php echo $cats[$i]["fav_food"] ?></td>
+                            <td><a href="add-update.php?id=<?php echo $cats[$i]['id']?>" class="btn btn-primary">edit</a></td>
+                            <td><a class="btn btn-danger" href="delete.php?id=<?php echo $cats[$i]['id']  ?>">delete</a></td>                     
+                        </tr>  
+                    <?php } ?>                
+                </tbody>
+            </table>
+        </div>
     </div>
 
-    <div class="d-none d-lg-block px-3">
-        <table class="table ">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Date of Birth</th>
-                    <th>Colour</th>
-                    <th>Favourite Food</th>
-                    <th></th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php for($i=0; $i<count($cats); $i++) {  ?>
-                    <tr>
-                        <td><?php echo $cats[$i]["name"] ?></td>  
-                        <td><?php echo DateFunctions::dbToDisplayFormat($cats[$i]["dob"]) ?></td>
-                        <td><?php echo $cats[$i]["colour"] ?></td> 
-                        <td><?php echo $cats[$i]["fav_food"] ?></td>
-                        <td><a href="add-update.php?id=<?php echo $cats[$i]['id']?>" class="btn btn-primary">edit</a></td>
-                        <td><a class="btn btn-danger" href="delete.php?id=<?php echo $cats[$i]['id']  ?>">delete</a></td>                     
-                    </tr>  
-                <?php } ?>                
-            </tbody>
-        </table>
-    </div>
 
     <div class="d-lg-none">       
         <div class="cat-cards" >
@@ -78,13 +80,13 @@
     <script>
 
         window.addEventListener('DOMContentLoaded', (event) => {
-            let statusAlert = document.querySelector('.alert');
+             let statusAlert = document.querySelector('.alert');
+             console.log(statusAlert);
             if (statusAlert) {
                 let statusAlert = document.querySelector('.alert');
                 let title = document.querySelector('.all-cats-title');
                 console.log(title);
-                title.style.paddingTop = "0rem";
-                title.style.color = "red";
+                title.style.paddingTop = "0rem";           
                 console.log('status alert exists');   
                 console.log(statusAlert);  
                 setTimeout(() => {
@@ -94,6 +96,7 @@
                     console.log(statusAlert.classList);
                     statusAlert.classList.remove('visible');
                     statusAlert.classList.add('not-visible');
+                   
                     console.log(statusAlert.classList);
                 }, 1000)                
             } else {

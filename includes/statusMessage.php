@@ -9,7 +9,7 @@
      }
 ?>
 
-<div class="visible alert <?php echo $class ?>" role="alert" style="position: relative; z-index: 1">
+<div class="visible alert <?php echo $class ?>" role="alert" >
     <?php echo $msg ?>
 </div>
 

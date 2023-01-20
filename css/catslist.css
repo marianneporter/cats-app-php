@@ -10,6 +10,8 @@
 
 .container-sm {
     max-width: 50rem;
+    padding-top: 3.5rem;
+
 }
 
 /* medium large and extra large screens */
@@ -41,6 +43,8 @@
 }
 
 /* small screens */
+
+
 
 .cat-cards {
     display: flex;

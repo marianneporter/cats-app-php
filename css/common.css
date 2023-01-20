@@ -3,14 +3,13 @@
     margin: 0; padding: 0;
 }
 
+
 .not-visible {
-    transform: translateY(-20rem);
- 
+    transform: translateY(-20rem); 
 }
 
 .visible {
-    transform: translateY(0);
-  
+    transform: translateY(0);  
 }
 
 .alert {
