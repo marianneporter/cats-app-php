@@ -76,33 +76,3 @@
     </div>
         
     <?php require_once('includes/footer.php') ?>   
-    
-    <script>
-
-        window.addEventListener('DOMContentLoaded', (event) => {
-             let statusAlert = document.querySelector('.alert');
-             console.log(statusAlert);
-            if (statusAlert) {
-                let statusAlert = document.querySelector('.alert');
-                let title = document.querySelector('.all-cats-title');
-                console.log(title);
-                title.style.paddingTop = "0rem";           
-                console.log('status alert exists');   
-                console.log(statusAlert);  
-                setTimeout(() => {
-                  //  statusAlert.style.opacity = 0;
-
-                    console.log('trying to remove class');
-                    console.log(statusAlert.classList);
-                    statusAlert.classList.remove('visible');
-                    statusAlert.classList.add('not-visible');
-                   
-                    console.log(statusAlert.classList);
-                }, 1000)                
-            } else {
-                console.log('status alert does not exist')
-            }
-        });    
-
-
-    </script>
