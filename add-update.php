@@ -119,14 +119,15 @@ if (isset($_POST['submit'])) {
 
         <div class="mb-3">
             <label class="form-label">Colour</label>
-            <select class="form-select colour-select" name="colour" >  
+            <select id="colourSelect" class="form-select colour-select" name="colour"
+                    data-colour="<?php echo $cat->colour ?>" >
                 <option hidden value="">Select Colour</option>       
                 <option>Black</option>
                 <option>Black and White</option>
-                <option>Tabby</optionss=>
-                <option>Tabby and White</optionss=>
+                <option>Tabby</option=>
+                <option>Tabby and White</option=>
                 <option>Ginger</option>
-                <option>Ginger and White</optionlass=>
+                <option>Ginger and White</option=>
                 <option>White</option>
                 <option>Grey</option>
                 <option>Grey and White</option>
@@ -136,7 +137,8 @@ if (isset($_POST['submit'])) {
         </div>
         <div class="mb-3">
             <label class="form-label">Cat's Favourite Food</label>
-            <select class="form-select fav-food-select" name="favFood">    
+            <select id="favFood" class="form-select fav-food-select" name="favFood"
+                data-food="<?php echo $cat->favFood ?>"> 
                 <option hidden value="">Select Favourite Food</option>                          
                 <option>Fish</option>
                 <option>Chicken</option>
@@ -153,45 +155,6 @@ if (isset($_POST['submit'])) {
         </div>
     </form>
 
-    <?php require_once('includes/footer.php') ?> 
+    <?php require_once('includes/footer.php') ?>
 
-    <script>
-
-        $( function() {             
-            $( "#dob" ).datepicker({
-                dateFormat: "d M yy",
-                changeMonth: true,
-                changeYear: true,
-                maxDate: new Date,
-                yearRange: "-40:+0"
-            });
-        } );
-
-        const catColour = '<?php echo $cat->colour ?>';        
-     
-        const colOptions = document.querySelectorAll('.colour-select option');    
- 
-        for (let i=1; i<colOptions.length; i++) {
-       
-            if (colOptions[i].value === catColour) {
-                colOptions[i].selected=true;              
-            } else {
-                colOptions[i].selected=false;
-            }
-        }
-
-        const favFood = '<?php echo $cat->favFood ?>';        
-     
-        const foodOptions = document.querySelectorAll('.fav-food-select option');  
-         
-        for (let i=1; i < foodOptions.length; i++) {
-       
-            if (foodOptions[i].value === favFood) {
-                foodOptions[i].selected=true;              
-            } else {
-                foodOptions[i].selected=false;
-            }
-        }
-
-    </script>
 </div>
