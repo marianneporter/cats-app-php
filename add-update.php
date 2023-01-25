@@ -59,8 +59,7 @@ function handleSubmittedForm($id=0) {
     return [
         "cat" => $cat,
         "errors" => $errors
-    ];
-       
+    ];       
 } 
 
 
@@ -90,7 +89,7 @@ if (isset($_POST['submit'])) {
 ?>
 
 <div class="add-update">
-    <h3 class="mt-3"><?php echo $cat->id=='0' ? 'Add' : 'Update'  ?> Cat</h3>
+    <h3><?php echo $cat->id=='0' ? 'Add' : 'Update'  ?> Cat</h3>
 
     <form method="post" action="<?php echo $_SERVER['PHP_SELF'] ?>" > 
         <input value="<?php echo $cat->id ?>" type="hidden" name="id" > 
@@ -105,8 +104,7 @@ if (isset($_POST['submit'])) {
             <div class="text-danger"><?php echo $errors['name']?></div>    
         </div>
 
-        <div class="mb-3">
-           
+        <div class="mb-3">           
             <label class="form-label">Date of Birth</label>
             <input type="text" class="form-control"
                 id="dob" name="dob" readonly="readonly"

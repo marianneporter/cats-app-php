@@ -16,10 +16,6 @@
 
     require_once('includes/header.php');
 
-    if ( isset($_GET['msg'])) {       
-        require_once('includes/statusMessage.php');
-    }
-
     require_once('utility/dates.php');
    
 ?>  

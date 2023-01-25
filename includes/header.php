@@ -29,6 +29,13 @@
 </head>
 
 <body >
-    
-<?php require_once('includes/nav.php'); ?>      
-<div class="container-sm">   
+    <div class="content" style="display: relative">
+
+    <?php 
+        if ( isset($_GET['msg'])) {       
+            require_once('includes/statusMessage.php');
+        }
+    ?>
+        
+    <?php require_once('includes/nav.php'); ?>      
+    <div class="container-sm">   

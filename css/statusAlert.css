@@ -1,0 +1,30 @@
+.status-alert {
+    position: absolute;
+    width: 20rem;
+    top: -20rem;
+    left: calc(50% - 10rem); 
+    z-index: 5;
+    text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    transition: top 5s;
+    font-weight: 500;
+}
+
+.not-visible {
+    top: -20rem;
+}
+
+.visible {
+    top: 3.5rem;
+}
+
+.status-danger {
+    background-color: rgb(179, 165, 165);
+    color: rgb(247, 19, 19);
+}
+
+.status-success {
+    background-color: rgb(220, 238, 220);
+    color: rgb(12, 184, 12);
+}

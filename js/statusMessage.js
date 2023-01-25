@@ -1,8 +1,8 @@
 window.addEventListener('DOMContentLoaded', (event) => {  
 
-    const statusAlert = document.querySelector('.alert');  
+    const statusAlert = document.querySelector('.status-alert');  
  
-    if (statusAlert) {
+    if (statusAlert) { 
         const urlSearchParams = new URLSearchParams(window.location.search);
         window.history.pushState({}, document.title, window.location.pathname);
 
@@ -12,20 +12,16 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
         let messageText
         if (params.name) {
-            messageText = Message.getStatusMessage(name, msgIndex);
-            console.log('going for normal status message')
- 
+            messageText = Message.getStatusMessage(name, msgIndex);        
         } else {
-            messageText = Message.getAuthMessage(msgIndex);
-            console.log('going forauth status message');
-       
+            messageText = Message.getAuthMessage(msgIndex);         
         }
         
         console.log(messageText);
         if (messageText.toLowerCase().includes('success')) {
-            statusAlert.classList.add('alert-success')
+            statusAlert.classList.add('status-success')
         } else {
-            statusAlert.classList.add('alert-danger')
+            statusAlert.classList.add('status-danger')
         }
 
         let messageArea = document.querySelector('#status-msg');                 

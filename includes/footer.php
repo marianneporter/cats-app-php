@@ -2,6 +2,7 @@
 &copy Marianne Porter 2023
 
 </div>
+</div>
 
 <?php   
     require_once('addScripts.php');   

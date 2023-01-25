@@ -4,8 +4,9 @@
 
 @media screen and (max-width: 575px) {
 
-    .container-sm { 
-        padding-top: 2.5rem;
+    h3 {
+        margin-top: 1.5rem;
+        margin-bottom: 1rem; 
     }
 
     .button-set * {
@@ -30,7 +31,4 @@
     .add-update {
         overflow: hidden;
     }
-
-
-
 }

@@ -67,8 +67,8 @@ if (isset($_POST['submit'])) {
 }
 ?>
 
-<div class="content">
-    <h3 class="pt-3">Login</h3>
+<div>
+    <h3>Login</h3>
 
     <form method="post" action="<?php echo $_SERVER['PHP_SELF'] ?>" > 
         

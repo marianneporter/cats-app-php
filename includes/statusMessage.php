@@ -1,3 +1,3 @@
-<div class="visible alert status-alert" role="alert">
+<div class="visible status-alert" >
     <span id="status-msg"></span>
 </div>

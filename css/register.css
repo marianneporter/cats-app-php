@@ -1,9 +1,9 @@
 .container-sm {
     max-width: 30rem;  
-  
+    padding-top: 5rem;   
 }  
 
-.content {
-    position: relative;
-    z-index: 1;
+h3 {
+    margin-top: 3rem;
 }
+

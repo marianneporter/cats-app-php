@@ -106,9 +106,8 @@
     require_once 'includes/header.php'; 
 ?>
 
-
 <div >
-    <h3 class="pt-5">Register</h3>
+    <h3>Register</h3>
 
     <form method="post" action="<?php echo $_SERVER['PHP_SELF'] ?>" > 
      
