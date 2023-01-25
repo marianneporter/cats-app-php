@@ -1,4 +1,9 @@
 .container-sm {
     max-width: 30rem;  
-    padding-top: 2rem;
+  
 }  
+
+.content {
+    position: relative;
+    z-index: 1;
+}

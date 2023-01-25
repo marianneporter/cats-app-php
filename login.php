@@ -3,6 +3,10 @@ require_once 'includes/header.php';
 
 require_once 'utility/dates.php';
 
+if ( isset($_GET['msg'])) {     
+    require_once('includes/statusMessage.php');
+}
+
 // initial handling for first time this page is routed to
 function initLoginDetails() {   
     $loginCreds = new \stdClass(); 
@@ -63,14 +67,14 @@ if (isset($_POST['submit'])) {
 }
 ?>
 
-<div class="content pt-5">
-    <h3>Login</h3>
+<div class="content">
+    <h3 class="pt-3">Login</h3>
 
     <form method="post" action="<?php echo $_SERVER['PHP_SELF'] ?>" > 
         
         <div class="mb-3">
             <div>
-                <label class="form-label">Email</label>
+                <label class="form-label pt-1">Email</label>
                 <input type="text"
                         class="form-control"
                         id="email" name="email"

@@ -3,11 +3,13 @@
    
     $url=$_SERVER['PHP_SELF'];
 
+    // redirect to login page if user is not logged in
     if (!strpos($url, 'login') && !strpos($url, 'register') && !strPos($url, 'error')) {
-        if (!isset($_SESSION['firstName'])) {            
+        if (!isset($_SESSION['firstName'])) {    
             header("Location: login.php");
-        }
-    } 
+        }             
+    }
+   
 ?>
 
 <!DOCTYPE html>
@@ -26,7 +28,7 @@
     <title>Cats App PHP</title>
 </head>
 
-<body>
+<body >
     
 <?php require_once('includes/nav.php'); ?>      
 <div class="container-sm">   

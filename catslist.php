@@ -23,7 +23,7 @@
     require_once('utility/dates.php');
    
 ?>  
-    <div style="position: relative; z-index: 1">
+    <div class="all-cats" >
         <h2 class="all-cats-title" >All Cats</h2>
         <div class="add-area">
             <a href="add-update.php" class="btn btn-primary add-btn mt-3">Add Cat</a>

@@ -13,11 +13,11 @@
     $registerResult = $dbAuth->registerUser($db, $user);
 
     if ($registerResult=="success") {
-        header("Location: index.php?authMsg=regSuccess");
+        header("Location: login.php?msg=regSuccess");
     } else if ($registerResult=="emailError") {
         $errors['email'] = "Email is already registered";
     } else {
-        header("Location: index.php?authMsg=regFailure");
+        header("Location: error.php");     
     }
 
 ?>

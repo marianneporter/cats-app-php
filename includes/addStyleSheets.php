@@ -39,3 +39,10 @@
             <link rel="stylesheet" href="css/register.css">
     <?php } ?>  
 
+    <?php
+         if ($route === "error") { ?> 
+            <link rel="stylesheet" href="css/error.css">
+    <?php } ?>  
+
+
+

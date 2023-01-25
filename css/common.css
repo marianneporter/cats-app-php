@@ -3,16 +3,22 @@
     margin: 0; padding: 0;
 }
 
+.container-sm {
+    min-height: calc(100vh - 3.5rem);
+    background-color: white;  
+    padding-top: 0;
+}
 
 .not-visible {
     transform: translateY(-20rem); 
 }
 
 .visible {
-    transform: translateY(0);  
+    transform: translateY(0rem);  
 }
 
 .alert {
+    position: absolute;
     transition: transform 5s;    
 }
 
@@ -36,12 +42,6 @@
         z-index: -1;    
         min-height: 100vh;    
     }
-}
-
-
-.container-sm {
-    min-height: calc(100vh - 3.5rem);
-    background-color: white;  
 }
 
 .btn {
