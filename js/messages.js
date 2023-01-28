@@ -1,4 +1,6 @@
 class Message {
+
+    static test = "test";
     static longStatusMessages = {
         addSuccess:    "has been successfully added",
         addFailure:    "cannot be added at this time",
@@ -14,13 +16,16 @@ class Message {
         updateSuccess: "update success", 
         updateFailure: "update failed",
         deleteSuccess: "delete success",
-        deleteFailure: "delete failed",
- 
+        deleteFailure: "delete failed", 
     }
 
     static authMessages = {
         regSuccess: "Register Success - Please Login"     
     }
+
+    static clientMessages = {
+        emptyAddUpdateForm: "Please Amend Form or Cancel"
+    } 
 
     static getStatusMessage = (name, message) => {
         const screenSize = window.screen.width;
@@ -33,5 +38,12 @@ class Message {
 
     static getAuthMessage = (message) => {
         return this.authMessages[message];
+    }
+
+    
+    static getClientMessage = (message) => {
+  
+        return this.clientMessages[message]
+     
     }
 }

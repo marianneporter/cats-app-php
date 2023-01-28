@@ -10,11 +10,12 @@
     if ( $route === "catslist" || $route === "login" || $route === "register" ) { ?>             
         <script src="./js/messages.js"></script>          
         <script src="./js/statusMessage.js"></script>
-    <?php } ?>
+<?php } ?>
 
 <?php
     if ($route === "add-update") { ?>    
         <!-- jquery for datepicker -->    
-        <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>          
+        <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>     
+        <script src="./js/messages.js"></script>     
         <script src="./js/add-update.js"></script>
 <?php } ?>

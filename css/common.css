@@ -10,23 +10,6 @@
     padding-top: 3.5rem;
 }
 
-/* .not-visible {
-    top: -20rem;
-}
-
-.visible {
-    top: 0;
-} */
-
-/* .status-alert {
-    transition: top 5s;
-} */
-/* .alert {
-    position: absolute;
-    z-index: 5rem;
-    transition: transform 5s;    
-} */
-
 @media screen and (min-width: 576px ) {
     body {   
         position: relative;    

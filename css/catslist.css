@@ -9,6 +9,10 @@
     text-align: right;
 }
 
+.add-btn {
+    min-width: 7.5rem;
+}
+
 .container-sm {
     max-width: 50rem;
     padding-top: 6rem;
@@ -48,6 +52,7 @@
 .cat-cards {
     display: flex;
     flex-wrap: wrap;  
+    justify-content: center; 
 }
 
 .card-content h6 {

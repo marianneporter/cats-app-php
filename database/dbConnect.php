@@ -28,8 +28,7 @@
                 return $this->pdo;       
             } 
             catch(Exception $e) {
-                echo 'error!';
-                echo $e;
+ 
                 return null;
             }
 		}

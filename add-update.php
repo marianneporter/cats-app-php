@@ -21,7 +21,10 @@ function updateCatForForm($id) {
 
     require_once('includes/getCatObject.php');
 
-    return getCatObject($id);   
+    
+    $catObj = getCatObject($id);
+
+    return $catObj; 
 
 }
 
@@ -78,10 +81,10 @@ if (isset($_POST['submit'])) {
 
     // handle processing for unsubmitted (freshly displayed form)
 
-    $errors = array('name' => '', 'dob' => '', 'colour' => '', 'favFood' => '');
+    $errors = array('name' => '', 'dob' => '', 'colour' => '', 'favFood' => ''); 
     if (isset($_GET['id'])) {
         $id=$_GET['id'];
-        $cat=updateCatForForm($id);
+        $cat=updateCatForForm($id);  
     } else {
         $cat=addCatForForm();
     }}
@@ -91,7 +94,8 @@ if (isset($_POST['submit'])) {
 <div class="add-update">
     <h3><?php echo $cat->id=='0' ? 'Add' : 'Update'  ?> Cat</h3>
 
-    <form method="post" action="<?php echo $_SERVER['PHP_SELF'] ?>" > 
+    <form method="post" action="<?php echo $_SERVER['PHP_SELF'] ?>"
+          onsubmit="return formChanged(event);" > 
         <input value="<?php echo $cat->id ?>" type="hidden" name="id" > 
         <div class="mt-2 mb-3">
           

@@ -31,11 +31,13 @@
 <body >
     <div class="content" style="display: relative">
 
-    <?php 
-        if ( isset($_GET['msg'])) {       
-            require_once('includes/statusMessage.php');
-        }
-    ?>
+    <div class="message-area" style="display: relative">
+        <?php 
+            if ( isset($_GET['msg'])) {       
+                require_once('includes/statusMessage.php');
+            }
+        ?>
+    </div> 
         
     <?php require_once('includes/nav.php'); ?>      
     <div class="container-sm">   

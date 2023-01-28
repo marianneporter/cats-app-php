@@ -1,18 +1,18 @@
 .status-alert {
     position: absolute;
     width: 20rem;
-    top: -20rem;
+    top: 0;
     left: calc(50% - 10rem); 
     z-index: 5;
     text-align: center;
     padding-top: 1rem;
     padding-bottom: 1rem;
-    transition: top 5s;
-    font-weight: 500;
+    transition: top 2s;
+    font-weight: 500; 
 }
 
 .not-visible {
-    top: -20rem;
+    top: -2rem;
 }
 
 .visible {
@@ -27,4 +27,23 @@
 .status-success {
     background-color: rgb(220, 238, 220);
     color: rgb(12, 184, 12);
+}
+
+.status-warning {
+    background-color: rgb(255, 218, 181);
+    color: rgb(248, 120, 16);
+}
+
+@media screen and (max-width: 575px) {
+    .status-alert {
+        width: 15rem;
+        left: calc(100% - 15rem);      
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .status-alert {
+        width: 10rem;
+        left: calc(100% - 10rem);  
+    }
 }
