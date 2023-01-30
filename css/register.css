@@ -1,6 +1,6 @@
 .container-sm {
-    max-width: 30rem;  
-    padding-top: 5rem;   
+    max-width: 25rem;    
+    padding: 5rem 1rem;
 }  
 
 h3 {
@@ -9,7 +9,7 @@ h3 {
 
 @media screen and (max-width: 575px) {
     h3 {
-        margin-top: 2rem;
+        margin-top: 2rem;      
     }
 }
 
