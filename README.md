@@ -1,17 +1,23 @@
-# PHP Mini Demonstration App
-
+## PHP Cats App:
 Developed during spring/summer of 2022 and completed in Jan 2023.
+### Technologies used:
+PHP    
+mySQL/PDO    
+HTML/CSS/JavaScript    
+Bootstrap 5  
 
-Uses mySql database.
+## Design Notes
+Originally a simple PHP App.  I have added some JavaScript to give a better user experience. JavaScript is mainly used for messaging.  
 
-Developed on xampp and Heroku.
+## Development and Testing
+Developed on xampp and heroku.
+Tested on Chrome developer tools.
 
-The app is fully responsive and uses Bootstrap 5 and custom CSS.
+## File Structure
+The main pages for the app are in the root directory.
+There is also another directory for include files which contain common code like header and footer and also make the app more manageable by keeping file sizes down.
+The database folder contains PHP classes relating to database access. 
+For most pages there is a css and JavaScript file which can be found in the css and js folders with the same name as the PHP file.
 
-Uses JavaScript mainly for client side messaging to give a better user experience.
-
-It has been tested on Google Chrome Developer tools.  
-
-Screenshots and Further Design notes can be found at https://drive.google.com/drive/folders/1cTXEB-2JWCv2DR7-RH38nXcZBsw0T-Pt?usp=sharing
-
-please contact me to get user ids and passwords to see Heroku app.
+## Screenshots
+https://drive.google.com/drive/folders/1KjVdN11pRP0bUcUHCRu6iFyYiD5CI5aq?usp=share_link
