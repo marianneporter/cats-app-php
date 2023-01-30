@@ -30,6 +30,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
         setTimeout(() => { 
             statusAlert.classList.remove('visible');
             statusAlert.classList.add('not-visible');       
-        }, 6000)                
+        }, 3000)                
     } 
 });    

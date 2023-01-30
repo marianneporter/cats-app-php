@@ -1,3 +1,27 @@
+/********************************************************************* */
+// Window event listeners
+/********************************************************************** */
+window.addEventListener('DOMContentLoaded', (event) => { 
+    originalData = $('form').serialize();   
+});
+
+window.onbeforeunload = function() {
+
+    if (submitted) {
+        return;
+    }
+
+    let currentFormData = $('form').serialize();
+    if ( originalData == currentFormData) {
+        return;
+    }
+
+    return 'Do you really want to leave this page? Changes may not be saved';
+ };
+
+ /*************************************************************************/
+ /* UI Elements                                                           */        
+/*************************************************************************/
 $( function() {             
     $( "#dob" ).datepicker({
         dateFormat: "d M yy",
@@ -7,6 +31,8 @@ $( function() {
         yearRange: "-40:+0"
     });
 } );
+
+let submitted = false;
 
 const catColour = document.querySelector('#colourSelect').dataset.colour; 
 
@@ -36,30 +62,26 @@ for (let i=1; i < foodOptions.length; i++) {
     }
 }
 
-function formChanged(event) {
+const formSubmitted = (event) => {
     
     let formState = $('form').serialize();   
+
     if (formState == originalData) {
         createStatusMessageElement();
         return false;
     } else {
+        submitted = true;
         return true;
-    }   
+    } 
 }
 
-window.addEventListener('DOMContentLoaded', (event) => { 
-    originalData = $('form').serialize();   
-});
-
+/*********************************************************************/
+// Messaging                                                         */
+/*********************************************************************/ 
 const createStatusMessageElement = async () => {
 
     const submitBtn = document.querySelector('.btn.btn-success');
     submitBtn.disabled = true;
-
-    let test = Message.test;
-    console.log(test);
-    let test2 = Message.getClientMessage('emptyAddUpdateForm');
-    console.log(test2);
    
     const errorDiv = document.createElement('div'); 
     errorDiv.id='error-div';    

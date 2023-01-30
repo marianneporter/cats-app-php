@@ -95,7 +95,7 @@ if (isset($_POST['submit'])) {
     <h3><?php echo $cat->id=='0' ? 'Add' : 'Update'  ?> Cat</h3>
 
     <form method="post" action="<?php echo $_SERVER['PHP_SELF'] ?>"
-          onsubmit="return formChanged(event);" > 
+          onsubmit="return formSubmitted(event);" > 
         <input value="<?php echo $cat->id ?>" type="hidden" name="id" > 
         <div class="mt-2 mb-3">
           
