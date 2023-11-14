@@ -44,12 +44,11 @@
         }
 
         private function getHerokuDets() {
-
-            $dbUrl    = getenv('CLEARDB_DATABASE_URL');
-            $host     = substr($dbUrl, 32, 27);
-            $dbName   = substr($dbUrl, 60, 22);
-            $username = substr($dbUrl, 8, 14);
-            $password = substr($dbUrl, 23, 8);  
+         
+            $host     = getenv('JAWSDB_HOST');
+            $dbName   = getenv('JAWSDB_DB_NAME');
+            $username = getenv('JAWSDB_USERNAME');
+            $password = getenv('JAWSDB_PASSWORD');
             
             return [ $host, $dbName, $username, $password];  
         }
